@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e10168fd-f211-436d-ab4a-ab19c82f2215" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Game.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Game.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Board.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Square.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Square.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +71,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1652205087504</updated>
-      <workItem from="1652205227363" duration="4980000" />
+      <workItem from="1652205227363" duration="6002000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1652206740893</created>
@@ -98,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1652209187361</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="When someone wins, highlight the three squares that caused the win">
+      <created>1652210501471</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1652210501471</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,17 +147,18 @@
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Added location to moves description in history" />
     <MESSAGE value="Bold the currently selected item in the move list" />
-    <option name="LAST_COMMIT_MESSAGE" value="Bold the currently selected item in the move list" />
+    <MESSAGE value="When someone wins, highlight the three squares that caused the win" />
+    <option name="LAST_COMMIT_MESSAGE" value="When someone wins, highlight the three squares that caused the win" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="183" key="#ESLint" timestamp="1652205665742">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="552" y="183" key="#ESLint/0.0.1920.1050@0.0.1920.1050" timestamp="1652205665742" />
-    <state x="254" y="33" width="1569" height="984" key="CommitChangelistDialog2" timestamp="1652209186062">
+    <state x="254" y="33" width="1569" height="984" key="CommitChangelistDialog2" timestamp="1652211297958">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="254" y="33" width="1569" height="984" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1652209186062" />
+    <state x="254" y="33" width="1569" height="984" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1652211297958" />
     <state width="1877" height="165" key="GridCell.Tab.0.bottom" timestamp="1652205650060">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

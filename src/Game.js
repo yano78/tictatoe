@@ -48,13 +48,13 @@ class Game extends React.Component {
 			history: [{
 				squares: Array(9).fill(null)
 			}],
-			stepNumber: 0,
+			currentStep: 0,
 			xIsNext: true
 		};
 	}
 
 	handleClick(i) {
-		const history = this.state.history.slice(0, this.state.stepNumber + 1);
+		const history = this.state.history.slice(0, this.state.currentStep + 1);
 		const current = history[history.length - 1];
 		const squares = current.squares.slice();
 
@@ -65,33 +65,34 @@ class Game extends React.Component {
 		this.setState({
 			history: history.concat([{
 				squares: squares,
-				location: getLocation(i)
+				location: getLocation(i),
+				stepNumber: history.length,
 			}]),
-			stepNumber: history.length,
+			currentStep: history.length,
 			xIsNext: !this.state.xIsNext,
 		});
 	}
 
 	jumpTo(step) {
 		this.setState({
-			stepNumber: step,
+			currentStep: step,
 			xIsNext: step % 2 === 0,
 		});
 	}
 
 	render() {
 		const history = this.state.history;
-		const current = history[this.state.stepNumber];
+		const current = history[this.state.currentStep];
 		const {winner, winnerSquares} = calculateWinner(current.squares);
 
 		const moves = history.map((step, move) => {
-			const desc = move ?
-				`Go to move #${move} (${step.location})`:
+			const desc = step.stepNumber ?
+				`Go to move #${step.stepNumber} (${step.location})`:
 				'Go to game start';
-			const buttonClass = move === this.state.stepNumber ? 'current-state' : '';
+			const buttonClass = move === this.state.currentStep ? 'current-state' : '';
 
 			return (
-				<li key={move}>
+				<li key={step.stepNumber}>
 					<button className={`${buttonClass} step-button`} onClick={() => this.jumpTo(move)}>{desc}</button>
 				</li>
 			);
@@ -117,10 +118,17 @@ class Game extends React.Component {
 				</div>
 				<div className="game-info">
 					<div>{status}</div>
+					<button onClick={() => this.sortMoves()}>Sort moves</button>
 					<ol>{moves}</ol>
 				</div>
 			</div>
 		);
+	}
+
+	sortMoves() {
+		this.setState({
+			history: this.state.history.reverse(),
+		});
 	}
 }
 
