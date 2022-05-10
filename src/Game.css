@@ -52,3 +52,8 @@ ol, ul {
 .current-state {
   font-weight: bold;
 }
+
+.winner-square {
+  background-color: darkgreen;
+  color: white;
+}
