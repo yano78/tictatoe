@@ -1,45 +1,7 @@
 import * as React from "react";
 import Board from "./components/Board";
+import helperFunctions from "./components/helper-functions";
 import './Game.css';
-
-function calculateWinner(squares) {
-	const lines = [
-		[0, 1, 2],
-		[3, 4, 5],
-		[6, 7, 8],
-		[0, 3, 6],
-		[1, 4, 7],
-		[2, 5, 8],
-		[0, 4, 8],
-		[2, 4, 6],
-	];
-	for (let i = 0; i < lines.length; i++) {
-		const [a, b, c] = lines[i];
-		if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-			return {
-				winner: squares[a],
-				winnerSquares: lines[i],
-			};
-		}
-	}
-	return {winner: null, winnerSquares: null};
-}
-
-function getLocation(i) {
-	const locations = {
-		0: '1, 1',
-		1: '1, 2',
-		2: '1, 3',
-		3: '2, 1',
-		4: '2, 2',
-		5: '2, 3',
-		6: '3, 1',
-		7: '3, 2',
-		8: '3, 3',
-	}
-
-	return locations[i];
-}
 
 class Game extends React.Component {
 	constructor(props) {
@@ -58,14 +20,14 @@ class Game extends React.Component {
 		const current = history[history.length - 1];
 		const squares = current.squares.slice();
 
-		if (calculateWinner(squares).winner || squares[i]) {
+		if (helperFunctions.calculateWinner(squares).winner || squares[i]) {
 			return;
 		}
 		squares[i] = this.state.xIsNext ? 'X' : 'O';
 		this.setState({
 			history: history.concat([{
 				squares: squares,
-				location: getLocation(i),
+				location: helperFunctions.getLocation(i),
 				stepNumber: history.length,
 			}]),
 			currentStep: history.length,
@@ -83,7 +45,7 @@ class Game extends React.Component {
 	render() {
 		const history = this.state.history;
 		const current = history[this.state.currentStep];
-		const {winner, winnerSquares} = calculateWinner(current.squares);
+		const {winner, winnerSquares} = helperFunctions.calculateWinner(current.squares);
 
 		const moves = history.map((step, move) => {
 			const desc = step.stepNumber ?
