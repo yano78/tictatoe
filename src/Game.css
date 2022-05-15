@@ -36,6 +36,19 @@ ol, ul {
   outline: none;
 }
 
+.board-row .square:first-child {
+  border-left: none;
+}
+.board-row .square:last-child {
+  border-right: none;
+}
+.board-row:first-child .square {
+  border-top: none;
+}
+.board-row:last-child .square {
+  border-bottom: none;
+}
+
 .kbd-navigation .square:focus {
   background: #ddd;
 }
@@ -49,8 +62,28 @@ ol, ul {
   margin-left: 20px;
 }
 
+.step-button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #999;
+  color: #fff;
+  cursor: pointer;
+  margin: 2px 0;
+}
+
 .current-state {
   font-weight: bold;
+  background-color: darkgreen;
+}
+
+.sort-button {
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  background-color: #999;
+  color: #fff;
+  cursor: pointer;
 }
 
 .winner-square {

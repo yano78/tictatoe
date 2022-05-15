@@ -80,7 +80,7 @@ class Game extends React.Component {
 				</div>
 				<div className="game-info">
 					<div>{status}</div>
-					<button onClick={() => this.sortMoves()}>Sort moves</button>
+					<button className={`sort-button`} onClick={() => this.sortMoves()}>Sort moves ⇅</button>
 					<ol>{moves}</ol>
 				</div>
 			</div>
